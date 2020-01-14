@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
                 else{
                     lista.add(EditText_content.getText().toString());
                     Toast.makeText(getApplicationContext(), "Item added to shoppinglist", Toast.LENGTH_SHORT).show();
+                    EditText_content.setText("");
                 }
             }
         });
@@ -57,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
     }
     public void openShowlist(){
             Intent intent = new Intent(this, ShowList.class);
-            intent.putExtra(EXTRA_TEXT, lista);
+            intent.putStringArrayListExtra(EXTRA_TEXT,lista);
             startActivity(intent);
     }
 }
